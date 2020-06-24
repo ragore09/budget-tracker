@@ -1,6 +1,7 @@
 package mx.ragore.budget.tracker.model
 
 data class Transaction (
+        val id: String,
         val userId: Long,
         val createdAt: Long = System.currentTimeMillis(),
         val amount: Double,

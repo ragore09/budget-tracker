@@ -1,7 +1,10 @@
 package mx.ragore.budget.tracker.model
 
+import org.springframework.data.annotation.Id
+
 data class User (
-        val userId: Int,
+        @Id
+        val userId: Long,
         val name: String,
         val lastName: String,
         val createdAt: Long
