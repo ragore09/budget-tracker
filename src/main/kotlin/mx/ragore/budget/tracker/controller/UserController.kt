@@ -13,17 +13,17 @@ class UserController(private val userService: UserService) {
     @GetMapping(name = "/{id}", produces = [MediaType.APPLICATION_JSON_VALUE])
     fun getUser(@PathVariable id: Long): EntityModel<UserDTO> {
         val response = userService.getUser(id)
-        return EntityModel.of(response,
-                linkTo(methodOn(UserController::class.java).getUser(response.id!!)).withSelfRel()
-        )
+        return EntityModel.of(
+                response,
+                linkTo(methodOn(UserController::class.java).getUser(response.id!!)).withSelfRel())
     }
 
     @PostMapping(consumes = [MediaType.APPLICATION_JSON_VALUE], produces = [MediaType.APPLICATION_JSON_VALUE])
     fun createUser(@RequestBody user: UserDTO): EntityModel<UserDTO> {
         val response = userService.createUser(user)
-        return EntityModel.of(response,
-                linkTo(methodOn(UserController::class.java).getUser(response.id!!)).withSelfRel()
-        )
+        return EntityModel.of(
+                response,
+                linkTo(methodOn(UserController::class.java).getUser(response.id!!)).withSelfRel())
     }
 
 }
