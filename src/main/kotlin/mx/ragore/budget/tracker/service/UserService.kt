@@ -4,4 +4,5 @@ import mx.ragore.budget.tracker.model.dto.UserDTO
 
 interface UserService {
     fun createUser(user: UserDTO): UserDTO
+    fun getUser(id: Long): UserDTO
 }
