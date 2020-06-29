@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id
 
 data class User (
         @Id
-        val userId: Long,
+        val id: Long,
         val name: String,
         val lastName: String,
         val createdAt: Long
