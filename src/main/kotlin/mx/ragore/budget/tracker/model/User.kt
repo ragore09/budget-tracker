@@ -7,5 +7,6 @@ data class User (
         val id: Long,
         val name: String,
         val lastName: String,
-        val createdAt: Long
+        val createdAt: Long,
+        val email: String
 )
